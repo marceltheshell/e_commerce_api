@@ -3,5 +3,60 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+  customers = Customer.create!([
+    {
+      first_name: 'Clark',
+      last_name: 'Kent',
+      email: 'c@k.com'
+    }, 
+    {
+      first_name: 'Diana',
+      last_name: 'Prince',
+      email: 'd@p.com'
+    }, 
+    {
+      first_name: 'Bruce',
+      last_name: 'Wayne',
+      email: 'b@w.com'
+    }, 
+    {
+      first_name: 'Logan',
+      last_name: 'Wolverine',
+      email: 'l@w.com'
+    },
+    {
+      first_name: 'Jeane',
+      last_name: 'Grey',
+      email: 'j@g.com'
+    }
+  ])
+
+
+  clothes = Category.create!([
+    {title: "clothes"}
+    {title: "food"},
+    {title: "furniture"}
+  ])
+
+  clothes[0].products.create!(name: "shirt")
+  clothes[0].products.create!(name: "pants")
+  clothes[0].products.create!(name: "socks")
+
+  clothes[1].products.create!(name: "chicken")
+  clothes[1].products.create!(name: "spinach")
+  clothes[1].products.create!(name: "olives")
+  
+  clothes[2].products.create!(name: "chair")
+  clothes[2].products.create!(name: "couch")
+  clothes[2].products.create!(name: "desk")
+
+
+  Order.create!([
+    {customer_id: Customer.first.id},
+    # {customer_id: Customer.second.id},
+    # {customer_id: Customer.third.id},
+    # {customer_id: Customer.fourth.id},
+    # {customer_id: Customer.fifth.id}
+  ])
+
+

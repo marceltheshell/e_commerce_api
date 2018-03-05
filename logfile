@@ -1,0 +1,44 @@
+LOG:  database system was shut down at 2018-03-02 22:41:40 PST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  database "shipt_api_1_development" already exists
+STATEMENT:  CREATE DATABASE "shipt_api_1_development" ENCODING = 'unicode'
+ERROR:  database "shipt_api_1_test" already exists
+STATEMENT:  CREATE DATABASE "shipt_api_1_test" ENCODING = 'unicode'
+ERROR:  relation "categories_products" already exists
+STATEMENT:  CREATE TABLE "categories_products" ("category_id" bigint, "product_id" bigint)
+ERROR:  operator does not exist: uuid = bigint at character 89
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+STATEMENT:  SELECT "products".* FROM "products" INNER JOIN "categories_products" ON "products"."id" = "categories_products"."product_id" WHERE "categories_products"."category_id" = $1
+ERROR:  operator does not exist: uuid = bigint at character 90
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+STATEMENT:  SELECT  "products".* FROM "products" INNER JOIN "categories_products" ON "products"."id" = "categories_products"."product_id" WHERE "categories_products"."category_id" = $1 LIMIT $2
+ERROR:  operator does not exist: uuid = bigint at character 89
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+STATEMENT:  SELECT "products".* FROM "products" INNER JOIN "categories_products" ON "products"."id" = "categories_products"."product_id" WHERE "categories_products"."category_id" = $1
+ERROR:  operator does not exist: uuid = bigint at character 90
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+STATEMENT:  SELECT  "products".* FROM "products" INNER JOIN "categories_products" ON "products"."id" = "categories_products"."product_id" WHERE "categories_products"."category_id" = $1 LIMIT $2
+ERROR:  operator does not exist: uuid = bigint at character 85
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+STATEMENT:  SELECT COUNT(*) FROM "products" INNER JOIN "categories_products" ON "products"."id" = "categories_products"."product_id" WHERE "categories_products"."category_id" = $1
+ERROR:  database "shipt_api_1_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "shipt_api_1_development"
+ERROR:  database "shipt_api_1_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "shipt_api_1_development"
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2018-03-03 00:53:12 PST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "shipt_api_1_development" does not exist
+ERROR:  database "shipt_api_1_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "shipt_api_1_development"
+FATAL:  database "shipt_api_1_development" does not exist
