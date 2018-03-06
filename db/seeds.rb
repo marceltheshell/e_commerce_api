@@ -31,32 +31,39 @@
     }
   ])
 
-
-  clothes = Category.create!([
-    {title: "clothes"}
+  #create some categories
+  categories = Category.create!([
+    {title: "clothes"},
     {title: "food"},
     {title: "furniture"}
   ])
 
-  clothes[0].products.create!(name: "shirt")
-  clothes[0].products.create!(name: "pants")
-  clothes[0].products.create!(name: "socks")
+  #create some orders
+  binding.pry
+  # Customer.first.orders.create!([
+  #   {}
+  # ])
 
-  clothes[1].products.create!(name: "chicken")
-  clothes[1].products.create!(name: "spinach")
-  clothes[1].products.create!(name: "olives")
+
+  # clothes[0].products.create!(name: "shirt")
+  # clothes[0].products.create!(name: "pants")
+  # clothes[0].products.create!(name: "socks")
+
+  # clothes[1].products.create!(name: "chicken")
+  # clothes[1].products.create!(name: "spinach")
+  # clothes[1].products.create!(name: "olives")
   
-  clothes[2].products.create!(name: "chair")
-  clothes[2].products.create!(name: "couch")
-  clothes[2].products.create!(name: "desk")
+  # clothes[2].products.create!(name: "chair")
+  # clothes[2].products.create!(name: "couch")
+  # clothes[2].products.create!(name: "desk")
 
 
-  Order.create!([
-    {customer_id: Customer.first.id},
-    # {customer_id: Customer.second.id},
-    # {customer_id: Customer.third.id},
-    # {customer_id: Customer.fourth.id},
-    # {customer_id: Customer.fifth.id}
-  ])
+  # Order.create!([
+  #   {customer_id: Customer.first.id}
+  #   # {customer_id: Customer.second.id},
+  #   # {customer_id: Customer.third.id},
+  #   # {customer_id: Customer.fourth.id},
+  #   # {customer_id: Customer.fifth.id}
+  # ])
 
 
