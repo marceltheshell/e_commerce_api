@@ -54,3 +54,9 @@ FATAL:  lock file "postmaster.pid" already exists
 HINT:  Is another postmaster (PID 1762) running in data directory "/usr/local/var/postgres"?
 FATAL:  lock file "postmaster.pid" already exists
 HINT:  Is another postmaster (PID 1762) running in data directory "/usr/local/var/postgres"?
+ERROR:  database "shipt_api_1_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "shipt_api_1_development"
+ERROR:  database "shipt_api_1_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "shipt_api_1_development"

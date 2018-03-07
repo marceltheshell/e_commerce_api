@@ -7,10 +7,10 @@ RSpec.describe Customer, :type => :model do
   end
 
   context 'validations' do
-    
+
     before do
       @customer = Customer.create!(email: "g@g.co")
-      3.times { Order.create!(customer: @customer) }
+      3.times { Order.create!(customer: @customer, total: 0) }
     end
 
     it "destroys the associated products on self destruct" do
@@ -25,6 +25,5 @@ RSpec.describe Customer, :type => :model do
       Customer.create!(email: "unique@u.com")
       expect{ Customer.create!(email: "unique@u.com") }.to raise_error(ActiveRecord::RecordInvalid)
     end
-
   end
 end
