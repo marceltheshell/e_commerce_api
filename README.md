@@ -37,7 +37,7 @@ This will determine the range of dates in which the data will be returned.
 It will determine whether the quantitiy of products sold will be returned as by day, week, or month
 
 *** Examples
-http://localhost:3000/api/product?start_date=2011-02-22&end_date=2011-03-22&interval=day
+http://localhost:3000/api/product?start_date=2018-03-08&end_date=2018-03-08&interval=day
 
 
 ** GET '/customer/:id/orders'
