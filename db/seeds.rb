@@ -55,15 +55,15 @@
   ])
 
   #create some orders
-  customers[0].orders.create!([
-    {total: 10, products: [furniture_products[0], furniture_products[1], clothes_products[0] ]}
+  Customer.first.orders.create!([
+    {products: [furniture_products[0], furniture_products[1], clothes_products[0] ]}
   ])
 
-  customers[1].orders.create!([
-    {total: 10, products: [food_products[0], food_products[0], clothes_products[1] ]}
+  Customer.second.orders.create!([
+    {products: [food_products[0], food_products[0], clothes_products[1] ]}
   ])
 
-  customers[2].orders.create!([
-    {total: 10, products: [food_products[2], clothes_products[0], clothes_products[1] ]}
+  Customer.third.orders.create!([
+    {products: [food_products[2], clothes_products[0], clothes_products[1] ]}
   ])
 
