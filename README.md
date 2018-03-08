@@ -10,10 +10,10 @@ First make sure Postgres is running.  Then run the commands: rake db:create db:m
 ## How to run the test suite
 You can run the test suite with the rspec command.  Unfortunately only the models have test coverage... with more time I would write tests for the serializer, controllers and two rake tasks.
 
-* Server
+## Server
 Run the command `rails s` and the root app will default to `http://localhost:3000/`
 
-* Rake Tasks
+## Rake Tasks
 In namespace `query` I have two rake tasks
 1. customer_category which returns ...
 To run, in the CLI use command rake query:customer_category
@@ -24,24 +24,21 @@ To run, in the CLI use command rake query:products_sold_csv <start_date> <end_da
 <interval> the string "day", "week" or "month", ex: "week"
 Note: each argument be separated by a space and should not be enclosed in parentheses, ex: rake query:products_sold_csv 2011-02-22 2011-03-22 "week"
 
-* API endpoints
-** There are two endpoints: 
-GET '/product'
-GET '/customer/:id/orders'
+## API endpoints
+### There are two endpoints: 
+#### GET '/product'
+#### GET '/customer/:id/orders'
 
-** GET '/product' accepts two query params: date and interval
-*** date should be two dates formatted Y-M-D separated by a semicolon, ex: 2011-02-22;2011-03-22.  The earlier date should come first while the later date should come second. 
-This will determine the range of dates in which the data will be returned.  
-*** interval should be the string "day", "week" or "month" 
-It will determine whether the quantitiy of products sold will be returned as by day, week, or month
+### GET '/product' accepts two query params: date and interval. 
+Date should be two dates formatted Y-M-D separated by a semicolon, ex: 2011-02-22;2011-03-22.  The earlier date should come first while the later date should come second. This will determine the range of dates in which the data will be returned.  Interval should be the string "day", "week" or "month". It will determine whether the quantitiy of products sold will be returned as by day, week, or month
 
-*** Examples
+### Examples
 http://localhost:3000/api/product?start_date=2018-03-08&end_date=2018-03-08&interval=day
 
-** GET '/customer/:id/orders'
+### GET '/customer/:id/orders'
 No query params will be accepted.  The URL param ":id" should be the customer_id (type:UUID) and will return all of the orders which belong to that customer.
 
-* A few conscious choices: 
+## A few conscious choices: 
 I replaced the active_record ids with UUIDs to reduce the likleyhood of eventual duplication
 
 In ProductsSoldByIntervalSerializer, the by_week and by_month methods are using nested loop structures which are costly in terms of Auxiliary Time used, O(N^2).  Ideally I would like to refactor those methods to something with a maximum auxiliary time of O(N).
