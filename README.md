@@ -48,6 +48,8 @@ An order should never exist without a customer, but a product can exist without 
 
 I replaced the active_record ids with UUIDs to reduce the likleyhood of eventual duplication
 
+In ProductsSoldByIntervalSerializer, the by_week and by_month methods are using nested loop structures which are costly in terms of Auxiliary Time used, O(N^2).  Ideally I would like to refactor those methods to something with a maximum of O(N).
+
 
 
 * ...
