@@ -38,6 +38,9 @@ http://localhost:3000/api/product?start_date=2018-03-08&end_date=2018-03-08&inte
 ### GET '/customer/:id/orders'
 No query params will be accepted.  The URL param ":id" should be the customer_id (type:UUID) and will return all of the orders which belong to that customer.
 
+### Examples
+http://localhost:3000/api/customer/408353ad-2728-4c6f-99c3-06dd996d45b9/orders
+
 ## A few conscious choices: 
 I replaced the active_record ids with UUIDs to reduce the likleyhood of eventual duplication
 
