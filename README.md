@@ -1,13 +1,13 @@
 # README
 
 
-* System dependencies
+## System dependencies
 You will need to have ruby 2.4.1, Postgres Rails 5.1 installed on your machine.  Once that is done, download the file and run the command `bundle install` to install all necessary gems
 
-* Database creation
+## Database creation
 First make sure Postgres is running.  Then run the commands: rake db:create db:migrate db:seed to create, initialize and seed the DB
 
-* How to run the test suite
+## How to run the test suite
 You can run the test suite with the rspec command.  Unfortunately only the models have test coverage... with more time I would write tests for the serializer, controllers and two rake tasks.
 
 * Server
