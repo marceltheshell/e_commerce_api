@@ -1,6 +1,6 @@
 class Api::ProductsController < ApplicationController
   def index
-    range = params["range"]
+    date = params["date"]
     interval = params["interval"]
 
     #range will be two date/times which will be passed in and represend the beginning and end ranges of the returned data

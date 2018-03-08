@@ -36,25 +36,34 @@
   ])
 
   #create some products
-  categories[0].products.create!([{title: "shirt", price: 10}, {title: "pants", price: 10}, {title: "pants", price: 10}])
-  categories[1].products.create!([{title: "chicken", price: 10}, {title: "spinach", price: 10 }, {title: "olives", price: 10}])
-  categories[2].products.create!([{title: "chair", price: 10}, {title: "couch", price: 10}, {title: "desk", price: 10}])
+  clothes_products = categories[0].products.create!([
+    {title: "shirt", price: 10}, 
+    {title: "pants", price: 50}, 
+    {title: "socks", price: 5}
+  ])
+  
+  food_products = categories[1].products.create!([
+    {title: "chicken", price: 10}, 
+    {title: "spinach", price: 2 }, 
+    {title: "olives", price: 7}
+  ])
+  
+  furniture_products = categories[2].products.create!([
+    {title: "chair", price: 100}, 
+    {title: "couch", price: 500}, 
+    {title: "desk", price: 250}
+  ])
 
   #create some orders
-  # Customer.first.orders.create!([
-  #   {}
-  # ])
+  customers[0].orders.create!([
+    {total: 10, products: [furniture_products[0], furniture_products[1], clothes_products[0] ]}
+  ])
 
+  customers[1].orders.create!([
+    {total: 10, products: [food_products[0], food_products[0], clothes_products[1] ]}
+  ])
 
-  
-
-
-  # Order.create!([
-  #   {customer_id: Customer.first.id}
-  #   # {customer_id: Customer.second.id},
-  #   # {customer_id: Customer.third.id},
-  #   # {customer_id: Customer.fourth.id},
-  #   # {customer_id: Customer.fifth.id}
-  # ])
-
+  customers[2].orders.create!([
+    {total: 10, products: [food_products[2], clothes_products[0], clothes_products[1] ]}
+  ])
 
