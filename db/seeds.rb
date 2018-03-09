@@ -66,8 +66,3 @@
   Customer.third.orders.create!([
     {products: [food_products[2], clothes_products[0], clothes_products[1] ]}
   ])
-
-  Customer.third.orders.create!([
-    {products: Product.first, Product.second ]}
-  ])
-
