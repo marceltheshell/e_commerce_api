@@ -3,8 +3,9 @@ require 'csv'
 namespace :query do
   desc "returns customer_id, customer_name, category_id and category_name"
   task customer_category: :environment do
-    c = Customer.all
-    
+    p Customer.select("id, first_name")
+    p Category.select("id, title")
+
   end
 
   desc "returns a CSV of all products sold during an date range by an interval"
