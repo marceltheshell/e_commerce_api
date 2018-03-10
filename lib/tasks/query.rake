@@ -3,8 +3,28 @@ require 'csv'
 namespace :query do
   desc "returns customer_id, customer_name, category_id and category_name"
   task customer_category: :environment do
-    p Customer.select("id, first_name")
-    p Category.select("id, title")
+    
+    sql = "SELECT  c.first_name, c.id, cp.category_id, ca.id, ca.title, count(ca.id) as CategoriesSold 
+          FROM Customers as c
+          INNER JOIN Orders as o
+          ON o.customer_id = c.id
+          INNER JOIN Orders_products op
+          ON o.id = op.order_id
+          INNER JOIN Categories_products cp
+          ON op.product_id = cp.product_id
+          INNER JOIN Categories ca
+          ON cp.category_id = ca.id
+          GROUP BY c.first_name, c.id, cp.category_id, ca.id, ca.title"
+
+     def execute_statement(sql)
+        results = ActiveRecord::Base.connection.exec_query(sql)
+        if results.present?
+            puts results
+        else
+            puts "Something is not right"
+        end
+    end
+    execute_statement(sql)
 
   end
 
