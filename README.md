@@ -10,7 +10,7 @@
 
 ### 2. Write a SQL query to return the results as display below:
 **done**
-Note: it is included in a file called sql_query.md in the root of the project.
+Note: It is included in a file called sql_query.md in the root of the project.
 
 Example
 
@@ -21,7 +21,7 @@ customer_id customer_first_name category_id category_name number_purchased
 ### 3. Include the previous result as part of a function in the application. If you are using an ORM, please write the query in your ORM's DSL. Leave the original SQL in a separate file.
 
 **done**
-Note: I put it in a rake task called `customer_category` in namespace `query`.  To run it, from the CLI run the command `rake query:customer_categories_purchased`
+Note: It exists in a rake task called `customer_category` in namespace `query`.  To run it, from the CLI run the command `rake query:customer_categories_purchased`
 
 ### 4. An API endpoint that accepts a date range and a day, week, or month and returns a breakdown of products sold by quantity per day/week/month.
 
