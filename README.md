@@ -4,12 +4,12 @@
 
 **done**
 
-## A customer can have many orders. An order is comprised of many products. An order has a status stating if the order is waiting for delivery, on its way, or delivered.
+### 1. A customer can have many orders. An order is comprised of many products. An order has a status stating if the order is waiting for delivery, on its way, or delivered.
 
-## **done**
+### **done**
 
-## Write a SQL query to return the results as display below:
-_done_
+### 2. Write a SQL query to return the results as display below:
+### **done**
 Note: it is included in a file called sql_query.md in the root of the project.
 
 Example
@@ -18,7 +18,7 @@ customer_id customer_first_name category_id category_name number_purchased
 
 1 John 1 Bouquets 15
 
-## Include the previous result as part of a function in the application. If you are using an ORM, please write the query in your ORM's DSL. Leave the original SQL in a separate file.
+### 3. Include the previous result as part of a function in the application. If you are using an ORM, please write the query in your ORM's DSL. Leave the original SQL in a separate file.
 _done_
 Note: I put it in a rake task called `customer_category` in namespace `query`.  To run it, from the CLI run the command `rake query:customer_categories_purchased`
 
