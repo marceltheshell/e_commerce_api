@@ -1,9 +1,12 @@
 # Shipt Requirements 
-1. A product belongs to many categories. A category has many products. A product can be sold in decimal amounts (such as weights).
-_done_
 
-2. A customer can have many orders. An order is comprised of many products. An order has a status stating if the order is waiting for delivery, on its way, or delivered.
-_done_
+## A product belongs to many categories. A category has many products. A product can be sold in decimal amounts (such as weights).
+
+## **done**
+
+## A customer can have many orders. An order is comprised of many products. An order has a status stating if the order is waiting for delivery, on its way, or delivered.
+
+## **done**
 
 3. Write a SQL query to return the results as display below:
 _done_
