@@ -61,8 +61,7 @@ _Answer:_ Since we know exactly what the inventory is of an item, I would set a 
 * The api is currently hosted on Heroku at the url https://shipt-api-1.herokuapp.com/
 * Active endpoints: 
 1. https://shipt-api-1.herokuapp.com/api/product?start_date=<date>&end_date=<date>&interval=<interval>
-2. https://shipt-api-1.herokuapp.com/api/customer/391f8090-e87d-4889-955c-21f481664e44/orders
-
+2. https://shipt-api-1.herokuapp.com/api/customer/:id/orders
 
 # To RUN Locally
 ## System dependencies
