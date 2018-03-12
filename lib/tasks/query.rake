@@ -2,7 +2,7 @@ require 'csv'
 
 namespace :query do
   desc "returns customer_id, customer_name, category_id and category_name"
-  task customer_category: :environment do
+  task customer_categories_purchased: :environment do
     
     sql = "SELECT  c.first_name, c.id, cp.category_id, ca.id, ca.title, count(ca.id) as CategoriesSold 
           FROM Customers as c
